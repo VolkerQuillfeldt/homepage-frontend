@@ -31,7 +31,7 @@ class Header extends Component {
 												Bootstrap
 												</div>
 												<div className="col-sm-8">
-												<a href="https://getbootstrap.com/">
+												<a target="_blank" href="https://getbootstrap.com/">
 												<span className="text-secondary">https://getbootstrap.com
 												</span></a>
 												</div>
@@ -41,7 +41,7 @@ class Header extends Component {
 												React
 												</div>
 												<div className="col-sm-8">
-												<a href="https://reactjs.org//">
+												<a target="_blank" href="https://reactjs.org//">
 												<span className="text-secondary">https://reactjs.org/
 												</span></a>
 												</div>
@@ -55,7 +55,7 @@ class Header extends Component {
 												Spring Boot 2 (Java 8)
 												</div>
 												<div className="col-sm-8">
-												<a href="https://spring.io/projects/spring-boot">
+												<a target="_blank" href="https://spring.io/projects/spring-boot">
 												<span className="text-secondary">https://spring.io/projects/spring-boot
 												</span></a>
 												</div>
@@ -69,7 +69,7 @@ class Header extends Component {
 												NGINX Open Source als Reverse Proxy
 												</div>
 												<div className="col-sm-8">
-												<a href="https://www.nginx.com/">
+												<a target="_blank" href="https://www.nginx.com/">
 												<span className="text-secondary">https://www.nginx.com/
 												</span></a>
 												</div>
@@ -79,11 +79,35 @@ class Header extends Component {
 												docker
 												</div>
 												<div className="col-sm-8">
-												<a href="https://www.docker.com/">
+												<a target="_blank" href="https://www.docker.com/">
 												<span className="text-secondary">https://www.docker.com/
 												</span></a>
 												</div>
 												</div>
+												<hr claseName="text-secondary" />
+												<div className="text-center">
+												<h4>Sources</h4>
+												</div>
+												<div className="row">
+												<div className="col-sm-4">
+												GIT Frontend
+												</div>
+												<div className="col-sm-8">
+												<a target="_blank" href="https://github.com/VolkerQuillfeldt/homepage-frontend">
+												<span className="text-secondary">https://github.com/VolkerQuillfeldt/homepage-frontend
+												</span></a>
+												</div>
+												</div>	
+												<div className="row">
+												<div className="col-sm-4">
+												GIT Backend
+												</div>
+												<div className="col-sm-8">
+												<a target="_blank" href="https://github.com/VolkerQuillfeldt/homepage-backend">
+												<span className="text-secondary">https://github.com/VolkerQuillfeldt/homepage-backend
+												</span></a>
+												</div>
+												</div>										
 											</div></div>
 										</div>
 
