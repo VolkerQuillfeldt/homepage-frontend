@@ -27,7 +27,9 @@ class Country extends Component {
 
 
 	render() {
-		
+		this.state.myTravels.map((item,index) => (
+			console.log(item.path)
+		));
 		return (
 			<span className="text-white" >
 				<h5 className="py-2">{this.props.country}</h5>

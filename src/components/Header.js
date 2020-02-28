@@ -31,7 +31,7 @@ class Header extends Component {
 												Bootstrap
 												</div>
 												<div className="col-sm-8">
-												<a target="_blank" href="https://getbootstrap.com/">
+												<a target="_blank" rel="noopener noreferrer" href="https://getbootstrap.com/">
 												<span className="text-secondary">https://getbootstrap.com
 												</span></a>
 												</div>
@@ -41,7 +41,7 @@ class Header extends Component {
 												React
 												</div>
 												<div className="col-sm-8">
-												<a target="_blank" href="https://reactjs.org//">
+												<a target="_blank" rel="noopener noreferrer" href="https://reactjs.org//">
 												<span className="text-secondary">https://reactjs.org/
 												</span></a>
 												</div>
@@ -55,8 +55,28 @@ class Header extends Component {
 												Spring Boot 2 (Java 8)
 												</div>
 												<div className="col-sm-8">
-												<a target="_blank" href="https://spring.io/projects/spring-boot">
+												<a target="_blank" rel="noopener noreferrer" href="https://spring.io/projects/spring-boot">
 												<span className="text-secondary">https://spring.io/projects/spring-boot
+												</span></a>
+												</div>
+												</div>
+												<div className="row">
+												<div className="col-sm-4">
+												PostgreSQL
+												</div>
+												<div className="col-sm-8">
+												<a target="_blank" rel="noopener noreferrer" href="https://spring.io/projects/spring-boot">
+												<span className="text-secondary">https://www.postgresql.org/
+												</span></a>
+												</div>
+												</div>
+												<div className="row">
+												<div className="col-sm-4">
+												Hibernate
+												</div>
+												<div className="col-sm-8">
+												<a target="_blank" rel="noopener noreferrer"  href="https://spring.io/projects/spring-boot">
+												<span className="text-secondary">https://hibernate.org/
 												</span></a>
 												</div>
 												</div>
@@ -69,7 +89,7 @@ class Header extends Component {
 												NGINX Open Source als Reverse Proxy
 												</div>
 												<div className="col-sm-8">
-												<a target="_blank" href="https://www.nginx.com/">
+												<a target="_blank" rel="noopener noreferrer" href="https://www.nginx.com/">
 												<span className="text-secondary">https://www.nginx.com/
 												</span></a>
 												</div>
@@ -79,7 +99,7 @@ class Header extends Component {
 												docker
 												</div>
 												<div className="col-sm-8">
-												<a target="_blank" href="https://www.docker.com/">
+												<a target="_blank" rel="noopener noreferrer" href="https://www.docker.com/">
 												<span className="text-secondary">https://www.docker.com/
 												</span></a>
 												</div>
@@ -93,7 +113,7 @@ class Header extends Component {
 												GIT Frontend
 												</div>
 												<div className="col-sm-8">
-												<a target="_blank" href="https://github.com/VolkerQuillfeldt/homepage-frontend">
+												<a target="_blank" rel="noopener noreferrer" href="https://github.com/VolkerQuillfeldt/homepage-frontend">
 												<span className="text-secondary">https://github.com/VolkerQuillfeldt/homepage-frontend
 												</span></a>
 												</div>
@@ -103,7 +123,7 @@ class Header extends Component {
 												GIT Backend
 												</div>
 												<div className="col-sm-8">
-												<a target="_blank" href="https://github.com/VolkerQuillfeldt/homepage-backend">
+												<a target="_blank" rel="noopener noreferrer" href="https://github.com/VolkerQuillfeldt/homepage-backend">
 												<span className="text-secondary">https://github.com/VolkerQuillfeldt/homepage-backend
 												</span></a>
 												</div>

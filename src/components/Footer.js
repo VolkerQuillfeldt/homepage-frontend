@@ -28,7 +28,7 @@ class Footer extends Component {
 									</p>
 									<p>
 										Telefon: +49(172)6578246<br />
-										E-Mail: <a href="mailto:q.volker@web.de "><span className="text-secondary">q.volker@web.de</span></a>
+										E-Mail: <a href="mailto:admin@vquillfeldt.de"><span className="text-secondary">admin@vquillfeldt.de</span></a>
 									</p>									</div>
 							</div>
 
