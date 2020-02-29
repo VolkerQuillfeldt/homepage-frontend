@@ -127,7 +127,30 @@ class Header extends Component {
 												<span className="text-secondary">https://github.com/VolkerQuillfeldt/homepage-backend
 												</span></a>
 												</div>
-												</div>										
+												</div>
+												<div className="text-center">
+												<h4>HOSTING</h4>
+												</div>
+												<div className="row">
+												<div className="col-sm-4">
+												IONOS VPS vSERVER
+												</div>
+												<div className="col-sm-8">
+												<a target="_blank" rel="noopener noreferrer" href="https://www.ionos.de/server/vps">
+												<span className="text-secondary">https://www.ionos.de/server/vps
+												</span></a>
+												</div>
+												</div>	
+												<div className="row">
+												<div className="col-sm-4">
+												Centos 8
+												</div>
+												<div className="col-sm-8">
+												<a target="_blank" rel="noopener noreferrer" href="https://www.centos.org">
+												<span className="text-secondary">https://www.centos.org
+												</span></a>
+												</div>
+												</div>											
 											</div></div>
 										</div>
 
