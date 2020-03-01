@@ -128,8 +128,9 @@ class Header extends Component {
 												</span></a>
 												</div>
 												</div>
+												<hr claseName="text-secondary" />
 												<div className="text-center">
-												<h4>HOSTING</h4>
+												<h4>Hosting</h4>
 												</div>
 												<div className="row">
 												<div className="col-sm-4">

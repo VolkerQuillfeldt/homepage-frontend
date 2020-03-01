@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Continent from './Continent';
 
+
 class SideNav extends Component {
 
 	constructor() {
@@ -14,7 +15,7 @@ class SideNav extends Component {
 	};
 
 
-	changeBody(path, page , count ) {
+	changeBody(path, page, count) {
 		this.props.changeBody(path, page, count);
 	};
 
@@ -35,12 +36,12 @@ class SideNav extends Component {
 			});
 	}
 
-
+	
 
 	render() {
 
 		return (
-			<span>
+			<span className="text-left">
 				{this.state.myContinents.map((item, index) => (
 					<Continent
 						key={index}
