@@ -23,9 +23,9 @@ class Body extends Component {
 		e.preventDefault();	
 		let curPage = page;
 		if (page === "Next") {
-			curPage = this.props.page + 1;
+			curPage = 1 + parseInt(this.props.page);
 		} else if (page === "Previous") {
-			curPage = this.props.page - 1;
+			curPage =  parseInt(this.props.page) - 1;
 		}
 		
 		this.props.changeBody(path, curPage, count);
@@ -125,7 +125,7 @@ class Body extends Component {
 		let emptyRow = <li className="page-item"><span className="page-link">&middot;</span></li>
 
 		for (var i = 1; i <= curMaxPage; i++) {
-			if (i !== this.props.page) {
+			if (i !== parseInt(this.props.page)) {
 				let row = <li  key={i} className="page-item"><span className="page-link" href="#" id={i} onClick={e => this.changeBody(e, this.props.path, e.target.id, this.props.count)}>{i}</span></li>
 				if (curMaxPage <= 10) {
 					nav.push(row);
