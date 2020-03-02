@@ -36,18 +36,18 @@ class Continent extends Component {
 
 	render() {
 		
-
-		let hashname = "#collapse" + this.props.continent;
-		let divname = "collapse" + this.props.continent;
-		let plusname = "pluscollapse" + this.props.continent;
-		let minusname = "minuscollapse" + this.props.continent;
+		let continentname = this.props.continent.replace(/\s/g, '');
+		let hashname = "#collapse" + continentname;
+		let divname = "collapse" + continentname;
+		let plusname = "pluscollapse" + continentname;
+		let minusname = "minuscollapse" + continentname;
 		
-		$("#collapse" + this.props.continent).on('hidden.bs.collapse', function (e) {
+		$("#collapse" + continentname).on('hidden.bs.collapse', function (e) {
 			$('#plus' + e.currentTarget.id).removeClass("d-none");
 			$('#minus' + e.currentTarget.id).addClass("d-none");
 			
 		})
-		$("#collapse" + this.props.continent).on('shown.bs.collapse', function (e) {
+		$("#collapse" + continentname).on('shown.bs.collapse', function (e) {
 			$('#minus' + e.currentTarget.id).removeClass("d-none");
 			$('#plus' + e.currentTarget.id).addClass("d-none");
 		})

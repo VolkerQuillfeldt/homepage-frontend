@@ -31,18 +31,18 @@ class Country extends Component {
 
 	render() {
 
+		let countryname = this.props.country.replace(/\s/g, '');
+		let hashname = "#collapse" +countryname;
+		let divname = "collapse" + countryname;
+		let plusname = "pluscollapse" + countryname;
+		let minusname = "minuscollapse" +countryname;
 		
-		let hashname = "#collapse" + this.props.country;
-		let divname = "collapse" + this.props.country;
-		let plusname = "pluscollapse" + this.props.country;
-		let minusname = "minuscollapse" + this.props.country;
-		
-		$("#collapse" + this.props.country).on('hidden.bs.collapse', function (e) {
+		$("#collapse" + countryname).on('hidden.bs.collapse', function (e) {
 			$('#plus' + e.currentTarget.id).removeClass("d-none");
 			$('#minus' + e.currentTarget.id).addClass("d-none");
 			e.stopPropagation();
 		})
-		$("#collapse" + this.props.country).on('shown.bs.collapse', function (e) {
+		$("#collapse" + countryname).on('shown.bs.collapse', function (e) {
 			$('#minus' + e.currentTarget.id).removeClass("d-none");
 			$('#plus' + e.currentTarget.id).addClass("d-none");
 			e.stopPropagation();
