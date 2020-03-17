@@ -76,6 +76,6 @@ class Continent extends Component {
 		)
 
 	};
-};
+}
 
 export default Continent;

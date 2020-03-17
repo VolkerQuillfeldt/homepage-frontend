@@ -1,6 +1,37 @@
 import React, { Component } from 'react';
 
-class Header extends Component {
+class UserActivator extends Component {
+ 	constructor() {
+		super();
+ 	}
+	
+	 
+  componentDidMount() {
+	
+	let openKey = this.props.actionKey.replace("openActivate", "activateUser"); 
+	let splitPoint = openKey.indexOf("action_key=") + "action_key=".length;
+
+	 let fetchString = openKey.substr(0, splitPoint)+encodeURIComponent(openKey.substr(splitPoint))	;
+
+	fetch(fetchString)
+	    .then(response => response.json())
+        .then((jsonData) => {
+					console.log(jsonData);
+          // jsonData is parsed json object received from url
+          this.setState(
+            {
+              myPictures: jsonData.pictures,
+            }
+          );
+        })
+        .catch((error) => {
+          // handle your errors here
+          console.error(error)
+        });
+    
+  }
+
+
 
 	render() {
 
@@ -46,7 +77,7 @@ class Header extends Component {
 												</span></a>
 												</div>
 												</div>
-												<hr claseName="text-secondary" />
+												<hr className="text-secondary" />
 												<div className="text-center">
 												<h4>Backend</h4>
 												</div>
@@ -81,7 +112,7 @@ class Header extends Component {
 												</div>
 												</div>
 												<div className="text-center">
-												<hr claseName="text-secondary" />
+												<hr className="text-secondary" />
 												<h4>Runtime</h4>
 												</div>
 												<div className="row">
@@ -104,7 +135,7 @@ class Header extends Component {
 												</span></a>
 												</div>
 												</div>
-												<hr claseName="text-secondary" />
+												<hr className="text-secondary" />
 												<div className="text-center">
 												<h4>Sources</h4>
 												</div>
@@ -128,7 +159,7 @@ class Header extends Component {
 												</span></a>
 												</div>
 												</div>
-												<hr claseName="text-secondary" />
+												<hr className="text-secondary" />
 												<div className="text-center">
 												<h4>Hosting</h4>
 												</div>
@@ -171,4 +202,4 @@ class Header extends Component {
 	};
 }
 
-export default Header;
+export default UserActivator;
