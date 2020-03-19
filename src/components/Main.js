@@ -37,11 +37,11 @@ class Main extends Component {
 				<div className="container-fluid">
 					<div className="row">
 						<div className="col-md-3 col-sm-6 col-xs-7">
-						<nav class="navbar navbar-expand-sm navbar-light">
-						<button class="navbar-toggler bg-white" type="button" data-toggle="collapse" data-target="#Navigation" aria-controls="Navigation" aria-expanded="false" aria-label="Toggle navigation">
-    						<span class="navbar-toggler-icon"></span>
+						<nav className="navbar navbar-expand-sm navbar-light">
+						<button className="navbar-toggler bg-white" type="button" data-toggle="collapse" data-target="#Navigation" aria-controls="Navigation" aria-expanded="false" aria-label="Toggle navigation">
+    						<span className="navbar-toggler-icon"></span>
   						</button>
-  						<div class="collapse navbar-collapse" id="Navigation">
+  						<div className="collapse navbar-collapse" id="Navigation">
 							<SideNav
 								changeBody={this.changeBody} />
 						</div>

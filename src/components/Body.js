@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../css/Modal.css';
 import './StartPage';
 import StartPage from './StartPage';
 import SpinnerDisplay from './SpinnerDisplay';

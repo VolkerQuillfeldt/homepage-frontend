@@ -4,7 +4,7 @@
 
             width: 700px;
             /* New width for default modal */
-            max-height: 450px;
+            /* max-height: 450px; */
             overflow-y: auto;
         }
 
@@ -15,7 +15,7 @@
 
             width: 350px;
             /* New width for small modal */
-            max-height: 300px;
+            max-height: auto;
             overflow-y: auto;
         }
 
