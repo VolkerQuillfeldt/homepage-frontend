@@ -10,14 +10,21 @@ class GuestBookBodyAdd extends Component {
 		this.state = {
 			id: 0,
 			name: "",
-			content: 'content',
-		} 
+			messageId: 0,
+			messageText: ""
+		}
+
+		this.changeBody  = this.changeBody.bind(this);
 	};
 
-	contentHTML = null;
+	changeBody(actionKey){
+		this.props.changeBody(actionKey);
+	}
+
+	contentHTML = "";
 
 	updateContent(value) {
-		this.contentHTML=value;
+		this.contentHTML = value;
 	}
 
 	componentDidMount() {
@@ -29,12 +36,11 @@ class GuestBookBodyAdd extends Component {
 		)
 	}
 
-	saveEntry() {
-		
+	saveEntry() {		
 
-		let loginURL = '/addEntryGuestBook';
-	
-		fetch(loginURL, {
+		let addEntryURL = '/addEntryGuestBook';
+
+		fetch(addEntryURL, {
 			method: 'POST', // *GET, POST, PUT, DELETE, etc.
 			cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
 			headers: {
@@ -43,14 +49,13 @@ class GuestBookBodyAdd extends Component {
 			},
 			referrerPolicy: 'no-referrer', // no-referrer, *client
 			body: JSON.stringify({
-				 				userId:this.props.id,
-								userName:this.props.name,
-								content:this.contentHTML
+				userId: this.props.id,
+				userName: this.props.name,
+				content: this.contentHTML
 			})
 		})
 			.then(response => response.json())
 			.then((jsonData) => {
-				console.log(jsonData);
 				// jsonData is parsed json object received from url
 				if (jsonData.id < 0) {
 					this.setState(
@@ -59,8 +64,10 @@ class GuestBookBodyAdd extends Component {
 							messageText: jsonData.message
 						}
 					);
-				} else {
-					this.props.loginUser(jsonData.id,jsonData.userName, jsonData.admin);
+				} else if(jsonData.id > 0) {
+					this.changeBody("list");
+				} else{
+					console.log("?");
 				}
 			})
 			.catch((error) => {
@@ -75,21 +82,34 @@ class GuestBookBodyAdd extends Component {
 
 		let buttonClassName = "btn btn-primary";
 
+		let messageClassName = "py-2 text-white";
+		if (this.state.messageId === 0) {
+			messageClassName += " bg-secondary";
+		} else if (this.state.messageId > 0) {
+			messageClassName += " bg-success";
+		} else {
+			messageClassName += " bg-danger";
+		}
+
 		return (
 
 			<div className="container-fluid">
 				<JoditEditor
-					value={this.state.content}
+					value={this.contentHTML}
 					config={{
 						readonly: false // all options from https://xdsoft.net/jodit/play.html
 					}}
-					onChange={e => this.updateContent(this)}
+					onChange={this.updateContent.bind(this)}
 				/>
-
+				<div className="py-2"></div>
 				<div>
 					<button type="button" onClick={e => this.saveEntry()} className={buttonClassName}>Save</button>
 				</div>
 				<div className="py-1"></div>
+				<div className={messageClassName}>
+					{this.state.messageText}
+				</div>
+				<div className="py-2">  </div>
 			</div>
 		)
 

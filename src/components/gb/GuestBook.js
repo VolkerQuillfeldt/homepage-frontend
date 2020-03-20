@@ -17,15 +17,17 @@ class GuestBook extends Component {
 	};
 
 	changeBody(action) {
+		console.log( "gb"+action);
 
 		this.setState(
 			{
 				action: action
 			}
-		)
+		);
 	}
 
 	componentWillMount() {
+
 		this.setState(
 			{
 				id: this.props.id,
@@ -37,6 +39,8 @@ class GuestBook extends Component {
 
 	render() {
 
+		console.log( "gb render "+this.state.action)
+
 		return (
 			<main>
 				<div className="container-fluid">
@@ -45,7 +49,7 @@ class GuestBook extends Component {
 							<GuestBookNavigation name={this.state.name} id={this.state.id} changeBody={this.changeBody} />
 						</div>
 						<div className="col-md-9 col-sm-6 col-xs-5">
-							<GuestBookBody action ={this.state.action} name={this.state.name} id={this.state.id} />
+							<GuestBookBody action ={this.state.action} name={this.state.name} id={this.state.id} changeBody={this.changeBody} />
 						</div>
 					</div>
 				</div>

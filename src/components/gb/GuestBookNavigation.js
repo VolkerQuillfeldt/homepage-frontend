@@ -15,6 +15,7 @@ class GuestBookNavigation extends Component {
 
 
 	changeBody(action) {
+		console.log( "nav"+action);
 		this.props.changeBody(action);
 	};
 
@@ -35,9 +36,9 @@ class GuestBookNavigation extends Component {
 				<h3>Guestbook</h3>
 				<h4>logged in as {this.state.name}</h4>
 				<div className="py-1"></div>
-				<button type="button" className="btn btn-warning btn-sm" href='#' onClick={e => this.props.changeBody("add")}>add Entry</button>
+				<button type="button" className="btn btn-warning btn-sm" href='#' onClick={e => this.changeBody("add")}>add Entry</button>
 				<div className="py-1"></div>
-				<button type="button" className="btn btn-warning btn-sm" href='#' onClick={e => this.props.changeBody("list")}>list entries</button>
+				<button type="button" className="btn btn-warning btn-sm" href='#' onClick={e => this.changeBody("list")}>list entries</button>
 				<div className="py-1"></div>
 			</div>
 
