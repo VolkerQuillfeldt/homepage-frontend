@@ -6,6 +6,7 @@ import Footer from './Footer';
 import UserActivator from './user/UserActivator';
 import UserPasswordChange from './user/UserPasswordChange';
 import GuestBook from './gb/GuestBook';
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 class App extends Component {
 
@@ -40,25 +41,25 @@ class App extends Component {
 
   render() {
 
-    console.log( "render "+ this.state.openGuestBook + " - " + this.state.name)
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    let actionKey = urlParams.get('actionKey');
 
     let component = <Main />;
-    if (window.location.pathname.includes("openActivate")) {
-      let action = window.location.href.substr(window.location.href.indexOf(window.location.pathname));
-      component = <UserActivator actionKey={action}></UserActivator>;
-    }
-    if (window.location.pathname.includes("openChangePassword")) {
-      let action = window.location.href.substr(window.location.href.indexOf(window.location.pathname));
-      component = < UserPasswordChange actionKey={action} ></UserPasswordChange >;
-    }
-    if( this.state.openGuestBook){
-      component = < GuestBook   name={this.state.name} id={this.state.id}></GuestBook>
+    if (this.state.openGuestBook) {
+      component = < GuestBook name={this.state.name} id={this.state.id}></GuestBook>
     }
 
     return (
       <div className="container-fluid bg-secondary">
         <Header loginUser={this.loginUser} openGuestBook={this.openGuestBook} />
-        {component}
+        <BrowserRouter>
+          <Switch>
+            <Route path="/openActivate"><UserActivator actionKey={actionKey}></UserActivator></Route>
+            <Route path="/openChangePassword">< UserPasswordChange actionKey={actionKey} ></UserPasswordChange >;</Route>
+            <Route path="/">{component}</Route>
+          </Switch>
+        </BrowserRouter>
         <Footer />
       </div>
     )

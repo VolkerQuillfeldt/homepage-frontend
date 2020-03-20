@@ -70,18 +70,11 @@ class UserPasswordChange extends Component {
 
 
 	commitPassword() {
-
-		if(! this.state.passwordSubmit) return;
 		
+		if(! this.state.passwordSubmit) return;
 
 		let pwd = document.getElementById("inputPasswordFirst");
-
-		let openKey = this.props.actionKey.replace("openChangePassword", "setnewPasswordforUser");
-		let splitPoint = openKey.indexOf("actionKey=") + "actionKey=".length;
-
-
-		let fetchString = openKey.substr(0, splitPoint - "actionKey=".length - 1);
-		let actionKey = openKey.substr(splitPoint);
+		let fetchString = "/setnewPasswordforUser?actionKey";
 		
 		fetch(fetchString, {
 			method: 'POST', // *GET, POST, PUT, DELETE, etc.
@@ -93,7 +86,7 @@ class UserPasswordChange extends Component {
 			referrerPolicy: 'no-referrer', // no-referrer, *client
 			body: JSON.stringify({
 				'password': pwd.value,
-				'actionKey':actionKey
+				'actionKey':this.props.actionKey
 			})
 		})
 			.then(response => response.json())

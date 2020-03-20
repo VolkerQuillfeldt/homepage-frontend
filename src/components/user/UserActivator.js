@@ -14,11 +14,8 @@ class UserActivator extends Component {
 
 
   componentDidMount() {
-
-    let openKey = this.props.actionKey.replace("openActivate", "activateUser");
-    let splitPoint = openKey.indexOf("actionKey=") + "actionKey=".length;
-
-    let fetchString = openKey.substr(0, splitPoint) + encodeURIComponent(openKey.substr(splitPoint));
+    
+    let fetchString = "/activateUser?actionKey="+this.props.actionKey;
 
     fetch(fetchString)
       .then(response => response.json())
