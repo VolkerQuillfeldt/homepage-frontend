@@ -42,8 +42,9 @@ class App extends Component {
   render() {
 
     const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    let actionKey = urlParams.get('actionKey');
+    const query = 'actionKey=';
+    let pos = queryString.indexOf(query)+ query.length;
+    let actionKey = queryString.substr( pos )
 
     let component = <Main />;
     if (this.state.openGuestBook) {
