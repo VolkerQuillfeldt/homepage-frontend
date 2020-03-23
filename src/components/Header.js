@@ -47,7 +47,7 @@ class Header extends Component {
 				<FaBook /><br />Guestbook {this.state.name}
 			</button>;
 		if (this.state.id <= 0) {
-			gbComponent = <button className="btn btn-light" type="button">
+			gbComponent = <button className="btn btn-outline-light" type="button">
 				<FaBook /><br />Guestbook login only
 			</button>;
 		}
