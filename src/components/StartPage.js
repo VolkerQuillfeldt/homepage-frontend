@@ -80,6 +80,6 @@ class StartPage extends Component {
       </div>
     )
   }
-};
+}
 
 export default StartPage;
