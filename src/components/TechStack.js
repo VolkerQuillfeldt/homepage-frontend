@@ -73,7 +73,7 @@ class TechStack extends Component {
 								</div>
 								<div className="row">
 									<div className="col-sm-4">
-										Hibernate (Navigation,User)
+										Hibernate/JPA (Navigation,User)
 												</div>
 									<div className="col-sm-8">
 										<a target="_blank" rel="noopener noreferrer" href="https://hibernate.org/">

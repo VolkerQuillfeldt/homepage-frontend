@@ -43,8 +43,8 @@ class App extends Component {
 
     const queryString = window.location.search;
     const query = 'actionKey=';
-    let pos = queryString.indexOf(query)+ query.length;
-    let actionKey = queryString.substr( pos )
+    let pos = queryString.indexOf(query) + query.length;
+    let actionKey = queryString.substr(pos)
 
     let component = <Main />;
     if (this.state.openGuestBook) {
@@ -53,12 +53,11 @@ class App extends Component {
 
     return (
       <div className="container-fluid bg-secondary">
-        <Header loginUser={this.loginUser} openGuestBook={this.openGuestBook} />
         <BrowserRouter>
           <Switch>
-            <Route path="/openActivate"><UserActivator actionKey={actionKey}></UserActivator></Route>
-            <Route path="/openChangePassword">< UserPasswordChange actionKey={actionKey} ></UserPasswordChange >;</Route>
-            <Route path="/">{component}</Route>
+            <Route path="/openActivate"><Header home={window.location.hostname} /><UserActivator actionKey={actionKey} ></UserActivator></Route>
+            <Route path="/openChangePassword"><Header home={window.location.hostname} />< UserPasswordChange actionKey={actionKey}></UserPasswordChange >;</Route>
+            <Route path="/"><Header loginUser={this.loginUser} openGuestBook={this.openGuestBook} home=""/>{component}</Route>
           </Switch>
         </BrowserRouter>
         <Footer />

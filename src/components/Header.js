@@ -34,11 +34,6 @@ class Header extends Component {
 		this.props.openGuestBook(open);
 	}
 
-	home(e) {
-		window.location.href = "/"
-	}
-
-
 
 	render() {
 
@@ -52,17 +47,32 @@ class Header extends Component {
 			</button>;
 		}
 
+		let loginArea = <div><button className="btn btn-light" type="button" data-target="#login" data-toggle="modal">
+			<FaUser /> Login
+				                     </button>
+			<Login loginUser={this.loginUser} /></div>;
+
+		let homeButton = <div><button className="btn btn-light" type="button" onClick={e => this.openGuestBook(false)}>
+			<FaHome /> Home  </button></div>;
+		if (this.props.home !== "") {
+			let homeAddress = 'http://'+this.props.home;	
+			homeButton = <div>
+				<a type="button" className="btn btn-light" href={homeAddress}>
+					<FaHome /> Home
+									 </a></div>;
+			gbComponent = "";
+			loginArea = "";
+		}
+		
+		
+
 		return (
 			<header>
 				<div className="container-fluidcontainer py-3 text-center">
 					<div className="row">
 						<div className="col-sm-1">
 							<div className="container-fluidcontainer py-3">
-								<div>
-									<button className="btn btn-light" type="button" onClick={e => this.openGuestBook(false)}>
-										<FaHome /> Home
-				                     </button>
-								</div>
+								{homeButton}
 							</div>
 						</div>
 						<div className="col-sm-1">
@@ -87,12 +97,7 @@ class Header extends Component {
 						</div>
 						<div className="col-sm-1">
 							<div className="container-fluidcontainer py-3">
-								<div>
-									<button className="btn btn-light" type="button" data-target="#login" data-toggle="modal">
-										<FaUser /> Login
-				                     </button>
-									<Login loginUser={this.loginUser} />
-								</div>
+								{loginArea}
 							</div>
 						</div>
 					</div>
