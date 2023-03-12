@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SideNav from './SideNav';
+
 import Body from './Body';
 
 class Main extends Component {
@@ -19,7 +20,7 @@ class Main extends Component {
 
 
 	changeBody(path , page, count ) {
-		
+
 		this.setState(
 			{
 				path:path,
@@ -38,13 +39,14 @@ class Main extends Component {
 					<div className="row">
 						<div className="col-md-3 col-sm-6 col-xs-7">
 						<nav className="navbar navbar-expand-sm navbar-light">
-						<button className="navbar-toggler bg-white" type="button" data-toggle="collapse" data-target="#Navigation" aria-controls="Navigation" aria-expanded="false" aria-label="Toggle navigation">
-    						<span className="navbar-toggler-icon"></span>
+						<button className="navbar-toggler bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#Navigation" aria-controls="Navigation" aria-expanded="false" aria-label="Toggle navigation">
+    						<span className="navbar-toggler-icon"/>
   						</button>
   						<div className="collapse navbar-collapse" id="Navigation">
-							<SideNav
-								changeBody={this.changeBody} />
+								<SideNav
+										changeBody={this.changeBody} />
 						</div>
+
 						</nav>
 						</div>
 						<div className="col-md-9 col-sm-6 col-xs-5">
@@ -54,7 +56,7 @@ class Main extends Component {
 									key={this.state.bodyChangeIndex}
 									path = {this.state.path}
 									page = {this.state.page}
-									count = {this.state.count} 
+									count = {this.state.count}
 									changeBody={this.changeBody}/>
 
 							</div>

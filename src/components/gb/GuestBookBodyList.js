@@ -47,14 +47,14 @@ class GuestBookBodyList extends Component {
 				entryArray.push(
 					<div id={i} className="card py-1">
 						<div className="card-body">
-							<h6 class="card-subtitle mb-2 bg-secondary text-white">{this.state.entries[i].userName} {this.state.entries[i].creationDateTime}</h6>
+							<h6 className="card-subtitle mb-2 bg-secondary text-white">{this.state.entries[i].userName} {this.state.entries[i].creationDateTime}</h6>
 							<p className="card-text"
-								dangerouslySetInnerHTML={{ __html: this.state.entries[i].content }}></p>
+								dangerouslySetInnerHTML={{ __html: this.state.entries[i].content }}/>
 						</div>
 					</div>
 				)
 				entryArray.push(
-					<div id={i + 'a'} className="py-1 bg-secondary"></div>
+					<div id={i + 'a'} className="py-1 bg-secondary"/>
 				)
 			}
 		}

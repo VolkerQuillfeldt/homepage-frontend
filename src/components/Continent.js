@@ -1,81 +1,82 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import Country from './Country';
 import $ from 'jquery';
-import { GoTriangleDown } from 'react-icons/go';
-import { GoTriangleRight } from 'react-icons/go';
+import {GoTriangleDown} from 'react-icons/go';
+import {GoTriangleRight} from 'react-icons/go';
 
 class Continent extends Component {
 
-	constructor() {
-		super();
+  constructor() {
+    super();
 
-		this.state = {
-			myCountries: []
-		}
+    this.state = {
+      reload: false,
+      myCountries: []
+    }
 
-		this.changeBody = this.changeBody.bind(this);
-	};
+  };
 
-	changeBody(path, page, count) {
-		this.props.changeBody(path, page, count);
-	};
+  changeBody=(path, page, count)=> {
+    this.props.changeBody(path, page, count);
+  };
 
-	componentDidMount() {
+  componentDidMount() {
 
-		const countries = this.props.countries.map(item => {
-			return item;
-		}
-		)
+    const countries = this.props.countries.map(item => {
+          return item;
+        }
+    )
 
-		this.setState(
-			{
-				myCountries: countries
-			}
-		);
-	};
+    this.setState(
+        {
+          myCountries: countries
+        }
+    );
+  };
 
-	render() {
-		
-		let continentname = this.props.continent.replace(/\s/g, '');
-		let hashname = "#collapse" + continentname;
-		let divname = "collapse" + continentname;
-		let plusname = "pluscollapse" + continentname;
-		let minusname = "minuscollapse" + continentname;
-		
-		$("#collapse" + continentname).on('hidden.bs.collapse', function (e) {
-			$('#plus' + e.currentTarget.id).removeClass("d-none");
-			$('#minus' + e.currentTarget.id).addClass("d-none");
-			
-		})
-		$("#collapse" + continentname).on('shown.bs.collapse', function (e) {
-			$('#minus' + e.currentTarget.id).removeClass("d-none");
-			$('#plus' + e.currentTarget.id).addClass("d-none");
-		})
-		
-		return (
+  render() {
 
-			<span>
-				<a className="text-white border-0" data-toggle="collapse" href={hashname} role="button"  aria-expanded="false" aria-controls={divname}>
-					<h3><GoTriangleDown  id={minusname} className="d-none" />
-					<GoTriangleRight  id={plusname} />
-					{this.props.continent}</h3>
+    let continentname = this.props.continent.replace(/\s/g, '');
+    let divname = "collapse" + continentname;
+    let plusname = "pluscollapse" + continentname;
+    let minusname = "minuscollapse" + continentname;
+
+    var myCollapsible = document.getElementById(divname)
+    myCollapsible && myCollapsible.addEventListener('hidden.bs.collapse', function (e) {
+      $('#plus' + e.currentTarget.id).removeClass("d-none");
+      $('#minus' + e.currentTarget.id).addClass("d-none");
+      e.stopPropagation();
+    });
+    myCollapsible && myCollapsible.addEventListener('shown.bs.collapse', function (e) {
+      $('#minus' + e.currentTarget.id).removeClass("d-none");
+      $('#plus' + e.currentTarget.id).addClass("d-none");
+      e.stopPropagation();
+    });
+
+    return (
+        <span>
+				<a className="text-white border-0" data-bs-toggle="collapse" href={"#"+divname}
+           role="button" aria-expanded="false" aria-controls={divname}>
+					<h3><GoTriangleDown id={minusname} className="d-none"/>
+					<GoTriangleRight id={plusname}/>
+            {this.props.continent}</h3>
 				</a>
 				<div className="collapse" id={divname} aria-expanded="false">
 					{this.state.myCountries.map((item, index) => (
-						<Country
-							key={index}
-							country={item.country}
-							travels={item.travels}
-							changeBody={this.changeBody}
-						/>
-					))
-					}
+              <Country
+                  key={index}
+                  country={item.country}
+                  travels={item.travels}
+                  changeBody={this.changeBody}
+              />
+          ))
+          }
 				</div>
-				<br />
+				<br/>
 			</span>
-		)
+    )
 
-	};
+  };
 }
 
 export default Continent;

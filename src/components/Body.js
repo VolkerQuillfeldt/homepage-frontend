@@ -38,7 +38,7 @@ class Body extends Component {
 					// jsonData is parsed json object received from url
 					this.setState(
 						{
-							myPictures: jsonData.pictures,
+							myPictures: jsonData.myPictures,
 							pictureStartIndex: jsonData.pictureStartIndex,
 							pictureEndIndex: jsonData.pictureEndIndex,
 							maxPage: jsonData.maxPage
@@ -71,12 +71,12 @@ class Body extends Component {
 		if (this.props.count === 6) {
 			countDropDown.push(<span key="1" className="dropdown-item active" >6</span>);
 		} else {
-			countDropDown.push(<span key="1a"className="dropdown-item"  onClick={e => this.changeBody(e, this.props.path, 1, 6)}>6</span>);
+			countDropDown.push(<span key="1a" className="dropdown-item"  onClick={e => this.changeBody(e, this.props.path, 1, 6)}>6</span>);
 		}
 		if (this.props.count === 12) {
 			countDropDown.push(<span key="10" className="dropdown-item active" >12</span>);
 		} else {
-			countDropDown.push(<span key="10a"className="dropdown-item"  onClick={e => this.changeBody(e, this.props.path, 1, 12)}>12</span>);
+			countDropDown.push(<span key="10a" className="dropdown-item"  onClick={e => this.changeBody(e, this.props.path, 1, 12)}>12</span>);
 		}
 		if (this.props.count === 24) {
 			countDropDown.push(<span key="25" className="dropdown-item active" >24</span>);
@@ -95,7 +95,7 @@ class Body extends Component {
 		}
 
 		var countDropDownComplete = <div className="col-md-4 col-sm-8 col-xs-10 text-right"><div className="dropdown  py-1">
-			<button className="btn btn-secondary dropdown-toggle btn-sm" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			<button className="btn btn-secondary dropdown-toggle btn-sm" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				Anzahl der Bilder
   					</button>
 			<div className="dropdown-menu  dropdown-menu-right">{countDropDown}</div></div></div>;
@@ -171,8 +171,8 @@ class Body extends Component {
 					{this.state.myPictures.map((item, index) => (
 						<div key={index} className={imageClass}>
 							<div className="card">
-								<span role="button" data-target={'#e' + index} data-toggle="modal">
-									<img alt="" className="card-img-top" src={'data:image/png;base64, ' + item}></img>
+								<span role="button" data-bs-target={'#e' + index} data-bs-toggle="modal">
+									<img alt="" className="card-img-top" src={'data:image/png;base64, ' + item}/>
 								</span>
 							</div>
 						</div>
@@ -187,7 +187,7 @@ class Body extends Component {
 										</button>
 									</div>
 									<div className="modal-body">
-										<img alt="" className="img-fluid modal-img" src={'data:image/png;base64, ' + item}></img>
+										<img alt="" className="img-fluid modal-img" src={'data:image/png;base64, ' + item}/>
 									</div>
 								</div>
 

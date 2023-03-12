@@ -13,23 +13,22 @@ class Login extends Component {
 		this.state = {
 			login: 'login'
 		}
-		this.changeToRegister = this.changeToRegister.bind(this);
-		this.loginUser = this.loginUser.bind(this);
+
 	};
 
-	setLogin(e) {
+	setLogin() {
 		//initial immer Login
 		this.setState({
 			login: 'login'
 		})
 	};
 
-	loginUser(id, name, admin) {
+	loginUser=(id, name, admin)=> {
 		this.props.loginUser(id, name, admin);
-		$('#login').modal('hide');
+		$('#closeButton').click();
 	}
 
-	changeToRegister(val) {
+	changeToRegister=(val)=> {
 		this.setState({
 			login: val
 		})
@@ -45,11 +44,11 @@ class Login extends Component {
 		}
 
 		return (
-			<div className="modal fade bd-example-modal-sm" id="login" role="dialog" onFocus={e => this.setLogin(e)} >
+			<div className="modal fade bd-example-modal-sm" id="login" role="dialog" onFocus={(e) => this.setLogin(e)} >
 				<div className="modal-dialog modal-sm modal-dialog" role="document">
 					<div className="modal-content">
 						<div className="modal-header">
-							<button type="button" className="close" data-dismiss="modal" aria-label="Close">
+							<button id="closeButton" type="button" className="close" data-bs-dismiss="modal" aria-label="Close">
 								<span aria-hidden="true">&times;</span>
 							</button>
 						</div>

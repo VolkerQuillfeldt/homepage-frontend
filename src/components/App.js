@@ -6,7 +6,7 @@ import Footer from './Footer';
 import UserActivator from './user/UserActivator';
 import UserPasswordChange from './user/UserPasswordChange';
 import GuestBook from './gb/GuestBook';
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 class App extends Component {
 
@@ -20,21 +20,20 @@ class App extends Component {
       openGuestBook: false
     }
 
-    this.loginUser = this.loginUser.bind(this);
-    this.openGuestBook = this.openGuestBook.bind(this);
   }
 
-  openGuestBook(openGuestBook) {
+  openGuestBook=(openGuestBook) =>{
     this.setState({
       openGuestBook: openGuestBook
     });
   }
 
-  loginUser(id, name, admin) {
+  loginUser=(id, name, admin) =>{
     this.setState({
       id: id,
       name: name,
-      admin: admin
+      admin: admin,
+      openGuestBook:true
     })
   }
 
@@ -48,17 +47,17 @@ class App extends Component {
 
     let component = <Main />;
     if (this.state.openGuestBook) {
-      component = < GuestBook name={this.state.name} id={this.state.id}></GuestBook>
+      component = < GuestBook name={this.state.name} id={this.state.id}/>
     }
 
     return (
       <div className="container-fluid bg-secondary">
         <BrowserRouter>
-          <Switch>
-            <Route path="/openActivate"><Header home={window.location.hostname} /><UserActivator actionKey={actionKey} ></UserActivator></Route>
-            <Route path="/openChangePassword"><Header home={window.location.hostname} />< UserPasswordChange actionKey={actionKey}></UserPasswordChange >;</Route>
-            <Route path="/"><Header loginUser={this.loginUser} openGuestBook={this.openGuestBook} home=""/>{component}</Route>
-          </Switch>
+          <Routes>
+            <Route path="/openActivate" element={<React.Fragment><Header home={window.location.hostname} /><UserActivator actionKey={actionKey} /></React.Fragment>}/>
+            <Route path="/openChangePassword" element={<React.Fragment><Header home={window.location.hostname} /><UserPasswordChange actionKey={actionKey}/></React.Fragment>}/>
+            <Route path="/" element={<React.Fragment><Header loginUser={this.loginUser} openGuestBook={this.openGuestBook} home=""/>{component}</React.Fragment>}/>
+          </Routes>
         </BrowserRouter>
         <Footer />
       </div>

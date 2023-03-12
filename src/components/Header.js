@@ -15,12 +15,9 @@ class Header extends Component {
 			name: "",
 			admin: false
 		}
-
-		this.loginUser = this.loginUser.bind(this);
-		this.openGuestBook = this.openGuestBook.bind(this);
 	}
 
-	loginUser(id, name, admin) {
+	loginUser=(id, name, admin)=> {
 
 		this.setState({
 			id: id,
@@ -30,7 +27,7 @@ class Header extends Component {
 		this.props.loginUser(id, name, admin);
 	}
 
-	openGuestBook(open) {
+	openGuestBook=(open)=> {
 		this.props.openGuestBook(open);
 	}
 
@@ -38,7 +35,7 @@ class Header extends Component {
 	render() {
 
 		let gbComponent =
-			<button className="btn btn-light" type="button" onClick={e => this.openGuestBook(true)}>
+			<button className="btn btn-light" type="button" onClick={() => this.openGuestBook(true)}>
 				<FaBook /><br />Guestbook {this.state.name}
 			</button>;
 		if (this.state.id <= 0) {
@@ -47,15 +44,16 @@ class Header extends Component {
 			</button>;
 		}
 
-		let loginArea = <div><button className="btn btn-light" type="button" data-target="#login" data-toggle="modal">
+		let loginArea = <div><button className="btn btn-light" type="button" data-bs-target="#login" data-bs-toggle="modal">
 			<FaUser /> Login
 				                     </button>
 			<Login loginUser={this.loginUser} /></div>;
 
-		let homeButton = <div><button className="btn btn-light" type="button" onClick={e => this.openGuestBook(false)}>
+		let homeButton = <div><button className="btn btn-light" type="button" onClick={() => this.openGuestBook(false)}>
 			<FaHome /> Home  </button></div>;
 		if (this.props.home !== "") {
-			let homeAddress = 'http://'+this.props.home;	
+			let homeAddress = 'http://'+this.props.home;
+			console.log(homeAddress)
 			homeButton = <div>
 				<a type="button" className="btn btn-light" href={homeAddress}>
 					<FaHome /> Home
@@ -78,7 +76,7 @@ class Header extends Component {
 						<div className="col-sm-1">
 							<div className="container-fluidcontainer py-3">
 								<div>
-									<button className="btn btn-success" type="button" data-target="#techstack" data-toggle="modal">
+									<button className="btn btn-success" type="button" data-bs-target="#techstack" data-bs-toggle="modal">
 										tech stack
 				                     </button>
 								</div>

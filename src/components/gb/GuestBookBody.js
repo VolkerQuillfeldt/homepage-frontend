@@ -14,18 +14,18 @@ class GuestBookBody extends Component {
 			actionKey: ""
 		}
 
-		this.changeBody = this.changeBody.bind(this);
-
 	};
 
-	changeBody(actionKey) {
+	changeBody=(actionKey)=> {
 		this.props.changeBody(actionKey);
 	}
 
 	static getDerivedStateFromProps(props, state) {
-		state.id = props.id;
-		state.name = props.name;
-		state.actionKey = props.action
+		if(props) {
+			state.id = props.id;
+			state.name = props.name;
+			state.actionKey = props.action
+		}
 	}
 
 

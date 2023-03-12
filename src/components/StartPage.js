@@ -23,7 +23,7 @@ class StartPage extends Component {
           // jsonData is parsed json object received from url
           this.setState(
             {
-              myPictures: jsonData.pictures,
+              myPictures: jsonData.myPictures,
             }
           );
         })
@@ -40,9 +40,9 @@ class StartPage extends Component {
     var olArray = [];
     for (let i = 0; i < this.state.myPictures.length; i++) {
       if (i === 0) {
-        olArray.push(<li key={i} data-target="#carouselExampleIndicators" data-slide-to={i} className="active"></li>)
+        olArray.push(<li key={i} data-bs-target="#carouselIndicators" data-bs-slide-to={i} className="active"/>)
       } else {
-        olArray.push(<li key={i} data-target="#carouselExampleIndicators" data-slide-to={i} ></li>)
+        olArray.push(<li key={i} data-bs-target="#carouselIndicators" data-bs-slide-to={i} />)
       }
     }
 
@@ -50,31 +50,31 @@ class StartPage extends Component {
     for (let i = 0; i < this.state.myPictures.length; i++) {
       if (i === 0) {
         picArray.push(<div key={i} className="carousel-item active">
-          <img  alt="" className="d-block modal-img" src={'data:image/png;base64, ' + this.state.myPictures[i]}></img>
+          <img  alt="" className="d-block modal-img" src={'data:image/png;base64, ' + this.state.myPictures[i]} />
         </div>)
       } else {
         picArray.push(<div key={i} className="carousel-item">
-          <img  alt="" className="d-block modal-img" src={'data:image/png;base64, ' + this.state.myPictures[i]}></img>
+          <img  alt="" className="d-block modal-img" src={'data:image/png;base64, ' + this.state.myPictures[i]} />
         </div>)
       }
     }
 
     return (
       <div className="container-fluid">
-        <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
+        <div id="carouselIndicators" className="carousel slide" data-bs-ride="carousel">
           <ol className="carousel-indicators">
             {olArray}
           </ol>
           <div className="carousel-inner">
             {picArray}
           </div>
-          <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+          <a className="carousel-control-prev" href="#carouselIndicators" role="button" data-bs-slide="prev">
+            <span className="carousel-control-prev-icon" aria-hidden="true" />
             <span className="sr-only">Previous</span>
           </a>
-          <a className="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span className="carousel-control-next-icon" aria-hidden="true"></span>
+          <a className="carousel-control-next" href="#carouselIndicators" role="button" data-bs-slide="next">
             <span className="sr-only">Next</span>
+            <span className="carousel-control-next-icon" aria-hidden="true" />
           </a>
         </div>
       </div>
