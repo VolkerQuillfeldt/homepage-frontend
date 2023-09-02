@@ -8,7 +8,7 @@ class Footer extends Component {
 			<footer>
 				<div className="container-fluidcontainer py-3">
 					<div>
-						<button type="button" data-target="#impressum" data-toggle="modal">
+						<button type="button" data-bs-target="#impressum" data-bs-toggle="modal">
 							Impressum
 					</button>
 					</div>
@@ -16,7 +16,7 @@ class Footer extends Component {
 						<div className="modal-dialog modal-sm modal-dialog-centered" role="document">
 							<div className="modal-content">
 								<div className="modal-header">
-									<button type="button" className="close" data-dismiss="modal" aria-label="Close">
+									<button type="button" className="close" data-bs-dismiss="modal" aria-label="Close">
 										<span aria-hidden="true">&times;</span>
 									</button>
 								</div>

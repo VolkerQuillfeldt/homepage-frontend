@@ -26,7 +26,7 @@ class SideNav extends Component {
 				// jsonData is parsed json object received from url
 				this.setState(
 					{
-						myContinents: jsonData.continents
+						myContinents: jsonData
 					}
 				);
 			})
