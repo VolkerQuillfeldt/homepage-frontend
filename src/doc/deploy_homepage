@@ -18,5 +18,5 @@ n3) npm run build  - um das PROD system zu bauen
 
 10) docker rm react_page
 
-11) npm
+11) docker run --restart always -d  -p 3000:80 --name=react_page volkerquillfeldt/myrepo:homepage
 
