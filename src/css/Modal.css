@@ -47,6 +47,8 @@
     }
 
     .modal-img{
-        max-height: calc(100%);
-        max-width:  calc(100%)
+        max-height: calc(90%);
+        max-width:  calc(100%);
+        width:calc(100%);
+        height:calc(90%);
     }

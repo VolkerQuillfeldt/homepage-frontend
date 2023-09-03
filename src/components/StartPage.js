@@ -50,11 +50,11 @@ class StartPage extends Component {
     for (let i = 0; i < this.state.myPictures.length; i++) {
       if (i === 0) {
         picArray.push(<div key={i} className="carousel-item active">
-          <img  style={{heigth:'calc(80vh)',width:'auto'}} alt="" className="d-block modal-img" src={'data:image/png;base64, ' + this.state.myPictures[i]} />
+          <img alt="" className="d-block modal-img" src={'data:image/png;base64, ' + this.state.myPictures[i]} />
         </div>)
       } else {
         picArray.push(<div key={i} className="carousel-item">
-          <img   style={{heigth:'calc(80vh)',width:'auto'}}   alt="" className="d-block modal-img" src={'data:image/png;base64, ' + this.state.myPictures[i]} />
+          <img   style={{maxHeigth:'calc(80vh)',width:'auto'}}   alt="" className="d-block modal-img" src={'data:image/png;base64, ' + this.state.myPictures[i]} />
         </div>)
       }
     }
