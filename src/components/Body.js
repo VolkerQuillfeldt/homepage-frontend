@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import './StartPage';
 import StartPage from './StartPage';
 import SpinnerDisplay from './SpinnerDisplay';
 
@@ -32,7 +31,7 @@ class Body extends Component {
               myPictures: pictures,
               position: position,
               isfinal: jsonData.isfinal,
-              isloading:false,
+              isloading: ! jsonData.isfinal,
             }
         );
       })
@@ -97,10 +96,10 @@ class Body extends Component {
             <div className="row">
               {this.state.myPictures.map((item, index) => (
 
-                  <div className={"col-lg-3 col-md-4 col-sm-6 col-xs-12"}>
+                  <div key={index} className={"col-lg-3 col-md-4 col-sm-6 col-xs-12"}>
 
                     <img alt="" className="card-img-top"
-                         src={'data:image/png;base64, ' + item}></img>
+                         src={'data:image/png;base64, ' + item}/>
 
                   </div>
 
