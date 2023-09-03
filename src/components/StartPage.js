@@ -54,14 +54,14 @@ class StartPage extends Component {
         </div>)
       } else {
         picArray.push(<div key={i} className="carousel-item">
-          <img   style={{maxHeigth:'calc(80vh)',width:'auto'}}   alt="" className="d-block modal-img" src={'data:image/png;base64, ' + this.state.myPictures[i]} />
+          <img alt="" className="d-block modal-img" src={'data:image/png;base64, ' + this.state.myPictures[i]} />
         </div>)
       }
     }
 
     return (
       <div className="container-fluid">
-        <div id="carouselIndicators" className="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+        <div id="carouselIndicators" className="carousel slide" data-bs-ride="carousel" data-bs-interval="2500">
           <ol className="carousel-indicators" >
             {olArray}
           </ol>
