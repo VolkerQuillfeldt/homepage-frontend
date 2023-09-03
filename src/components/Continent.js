@@ -16,7 +16,7 @@ class Continent extends Component {
 
   };
 
-  changeBody=(path, page, count)=> {
+  changeBody = (path, page, count) => {
     this.props.changeBody(path, page, count);
   };
 
@@ -54,26 +54,27 @@ class Continent extends Component {
     });
 
     return (
-        <span>
-				<a className="text-white border-0" data-bs-toggle="collapse" href={"#"+divname}
-           role="button" aria-expanded="false" aria-controls={divname}>
-					<h3><GoTriangleDown id={minusname} className="d-none"/>
-					<GoTriangleRight id={plusname}/>
-            {this.props.continent}</h3>
-				</a>
-				<div className="collapse" id={divname} aria-expanded="false">
-					{this.state.myCountries.map((item, index) => (
-              <Country
-                  key={index}
-                  country={item.country}
-                  travels={item.travels}
-                  changeBody={this.changeBody}
-              />
-          ))
-          }
-				</div>
-				<br/>
-			</span>
+        <>
+
+              <a className="text-white border-0" data-bs-toggle="collapse" href={"#" + divname}
+                 role="button" aria-expanded="false" aria-controls={divname}>
+                <h3><GoTriangleDown id={minusname} className="d-none"/>
+                  <GoTriangleRight id={plusname}/>
+                  {this.props.continent}</h3>
+              </a>
+              <div className="collapse" id={divname} aria-expanded="false">
+                {this.state.myCountries.map((item, index) => (
+                    <Country
+                        key={index}
+                        country={item.country}
+                        travels={item.travels}
+                        changeBody={this.changeBody}
+                    />
+                ))
+                }
+              </div>
+              <br/>
+            </>
     )
 
   };

@@ -51,7 +51,7 @@ class App extends Component {
     }
 
     return (
-      <div className="container-fluid bg-secondary">
+      <div className="container-fluid bg-secondary scrollY">
         <BrowserRouter>
           <Routes>
             <Route path="/openActivate" element={<React.Fragment><Header home={window.location.hostname} /><UserActivator actionKey={actionKey} /></React.Fragment>}/>

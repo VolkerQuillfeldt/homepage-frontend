@@ -1,7 +1,8 @@
 body {
     font-weight: 200;
     background-color: #337ab7;
-  }
+    overflow: hidden;
+}
   
   header a,
   footer a {
