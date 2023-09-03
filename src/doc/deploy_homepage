@@ -2,7 +2,7 @@
 
 2) Change to Working directory
 
-3) npm run build  - um das PROD system zu bauen
+n3) npm run build  - um das PROD system zu bauen
 
 4) docker build -t homepage-vqui .    -Docker image bauen .Dockerfile im  working directory daher mit . am Ende
 
@@ -18,5 +18,5 @@
 
 10) docker rm react_page
 
-11) docker run --restart always -d  -p 3000:80 --name=react_page volkerquillfeldt/myrepo:homepage
+11) npm
 

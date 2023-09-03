@@ -50,22 +50,22 @@ class StartPage extends Component {
     for (let i = 0; i < this.state.myPictures.length; i++) {
       if (i === 0) {
         picArray.push(<div key={i} className="carousel-item active">
-          <img  alt="" className="d-block modal-img" src={'data:image/png;base64, ' + this.state.myPictures[i]} />
+          <img  style={{heigth:'calc(80vh)',width:'auto'}} alt="" className="d-block modal-img" src={'data:image/png;base64, ' + this.state.myPictures[i]} />
         </div>)
       } else {
         picArray.push(<div key={i} className="carousel-item">
-          <img  alt="" className="d-block modal-img" src={'data:image/png;base64, ' + this.state.myPictures[i]} />
+          <img   style={{heigth:'calc(80vh)',width:'auto'}}   alt="" className="d-block modal-img" src={'data:image/png;base64, ' + this.state.myPictures[i]} />
         </div>)
       }
     }
 
     return (
       <div className="container-fluid">
-        <div id="carouselIndicators" className="carousel slide" data-bs-ride="carousel">
-          <ol className="carousel-indicators">
+        <div id="carouselIndicators" className="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+          <ol className="carousel-indicators" >
             {olArray}
           </ol>
-          <div className="carousel-inner">
+          <div className="carousel-inner" >
             {picArray}
           </div>
           <a className="carousel-control-prev" href="#carouselIndicators" role="button" data-bs-slide="prev">

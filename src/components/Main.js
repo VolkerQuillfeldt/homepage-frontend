@@ -34,10 +34,9 @@ class Main extends Component {
 	render() {
 
 		return (
-			<main>
-				<div className="container-fluid">
+				<div className="container-fluid main" >
 					<div className="row">
-						<div className="col-md-3 col-sm-6 col-xs-7">
+						<div className="col-lg-2 col-md-4 col-sm-6 col-xs-8">
 						<nav className="navbar navbar-expand-sm navbar-light">
 						<button className="navbar-toggler bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#Navigation" aria-controls="Navigation" aria-expanded="false" aria-label="Toggle navigation">
     						<span className="navbar-toggler-icon"/>
@@ -49,7 +48,7 @@ class Main extends Component {
 
 						</nav>
 						</div>
-						<div className="col-md-9 col-sm-6 col-xs-5">
+						<div className="col-lg-10 col-md-8 col-sm-6 col-xs-4">
 							<div className="container">
 
 								<Body
@@ -63,7 +62,6 @@ class Main extends Component {
 						</div>
 					</div>
 				</div>
-			</main>
 		)
 
 	};
